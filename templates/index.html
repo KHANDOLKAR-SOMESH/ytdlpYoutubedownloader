@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Downloader</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>YouTube Video Downloader</h1>
+    <form method="POST">
+        <input type="text" name="url" placeholder="Enter YouTube Video URL" required>
+        <button type="submit">Fetch</button>
+    </form>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    {% if title %}
+        <h2>{{ title }}</h2>
+        <img class="thumbnail" src="{{ thumbnail_url }}" alt="Thumbnail">
+
+        <h3>Video Formats</h3>
+        <ul class="grid">
+            {% for video in video_formats %}
+                <li>
+                    {{ video.resolution }}p - 
+                    <a href="#" onclick="setDownload('{{ video.url }}', 'video')">Select</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <h3>Audio Formats</h3>
+        <ul class="grid">
+            {% for audio in audio_formats %}
+                <li>
+                    {{ audio.audio_bitrate }} kbps - 
+                    <a href="#" onclick="setDownload('{{ audio.url }}', 'audio')">Select</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <h3>Download Merged Video</h3>
+        <a id="download-link" href="#" style="display:none;">
+            <button>Download Video</button>
+        </a>
+    {% endif %}
+</div>
+
+<script>
+    let selectedVideo = "";
+    let selectedAudio = "";
+
+    function setDownload(url, type) {
+        if (type === "video") selectedVideo = url;
+        if (type === "audio") selectedAudio = url;
+
+        if (selectedVideo && selectedAudio) {
+            document.getElementById("download-link").href = "/merge?video=" + encodeURIComponent(selectedVideo) + "&audio=" + encodeURIComponent(selectedAudio);
+            document.getElementById("download-link").style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>

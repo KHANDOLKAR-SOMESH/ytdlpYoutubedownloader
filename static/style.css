@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 40px;
+    background: #f9f9f9;
+}
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+    background: #f4f4f4;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input, button {
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 0;
+}
+
+.grid li {
+    list-style: none;
+    background: #ddd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+}
+
+.section {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: #fff;
+}
+
+h4 {
+    margin-bottom: 10px;
+}
+
+.thumbnail {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.section ul {
+    padding: 0;
+}
+
+.section li {
+    list-style: none;
+    padding: 10px 15px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+/* Text inside list */
+.section li span {
+    flex: 1;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Download button */
+.section li a {
+    text-decoration: none;
+    background: #007bff;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.section li a:hover {
+    background: #0056b3;
+}
+/* Container for audio formats */
+.flex {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates 2 equal columns */
+    gap: 10px; /* Space between grid items */
+    list-style: none;
+    padding: 0;
+}
+
+/* Each audio format box */
+.flex li {
+    background: #f1f1f1;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Align bitrate text */
+.flex li span {
+    flex: 1;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Download button */
+.flex li a {
+    text-decoration: none;
+    background: #007bff;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.flex li a:hover {
+    background: #0056b3;
+}
+
